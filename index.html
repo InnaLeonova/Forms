@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -23,16 +22,21 @@
           <ul>
             <li>
               <label for="username">Your name</label>
-              <input type="text" name="user-name" id="username" />
+              <input type="text" name="user-name" id="username" required />
             </li>
-
             <li>
               <label for="usermail">Your email address</label>
-              <input type="email" name="user-email" id="usermail" />
+              <input type="email" name="user-email" id="usermail" required />
             </li>
             <li>
               <label for="userpassword">Your password</label>
-              <input type="password" name="user-password" id="userpassword" />
+              <input
+                type="password"
+                name="user-password"
+                id="userpassword"
+                required
+                minlength="7"
+              />
             </li>
           </ul>
         </section>
@@ -41,13 +45,27 @@
           <ul>
             <li>
               <label for="userage">Your age</label>
-              <input type="number" step="1" name="user-age" id="userage" />
+              <input
+                type="number"
+                step="1"
+                name="user-age"
+                id="userage"
+                required
+                min="18"
+                max="100"
+              />
             </li>
             <li>
               <label for="userbirthdate">Your birthdate</label>
-              <input type="date" name="user-birthdate" id="userbirthdate" />
+              <input
+                type="date"
+                name="user-birthdate"
+                id="userbirthdate"
+                required
+                min="1921-01-01"
+                max="2003-12-12"
+              />
             </li>
-
             <li>
               <label for="favoritecolor">Your favorite color?</label>
               <select name="favorite-color" id="favoritecolor">
@@ -62,7 +80,6 @@
           <label for="usermessage">Your message</label>
           <textarea name="user-message" id="usermessage"></textarea>
         </section>
-
         <section>
           <h2>How should we verify your account?</h2>
           <ul>
@@ -72,6 +89,7 @@
                 name="verify"
                 id="verify-text-message"
                 value="text-message"
+                required
               />
               <label for="verify-text-message">Via text message (SMS)</label>
             </li>
@@ -81,6 +99,7 @@
                 name="verify"
                 id="verify-phone"
                 value="phone"
+                required
               />
               <label for="verify-phone">Via a phone call</label>
             </li>
@@ -90,12 +109,12 @@
                 name="verify"
                 id="verify-email"
                 value="email"
+                required
               />
               <label for="verify-email">Via an email</label>
             </li>
           </ul>
         </section>
-
         <section>
           <h2>How should we contact you?</h2>
           <ul>
@@ -108,7 +127,6 @@
               />
               <label for="contact-email">Contact me via email</label>
             </li>
-
             <li class="form-control-inline">
               <input
                 type="checkbox"
@@ -127,8 +145,9 @@
             <label for="agree-terms">Agree to terms?</label>
           </div>
         </section>
-        <section>
-          <button>Submit</button>
+        <section class="btn">
+          <button type="submit">Submit</button>
+          <button type="reset">Clear</button>
         </section>
       </form>
     </main>
